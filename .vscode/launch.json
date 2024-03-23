@@ -9,7 +9,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/build/graph_v1/main",
+            "program": "${workspaceFolder}/build/graph_v2/main_graph_v2",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
