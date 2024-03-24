@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 
 #include "data_center.h"
 #include "node.h"
@@ -60,6 +61,28 @@ private:
      * @param config 
      */
     void shuffleConfig(std::vector<std::vector<std::string>>& config);
+
+    /**
+     * @brief Check if config is a directed acyclic graph
+     * 
+     * @param config 
+     * @return true 
+     * @return false 
+     */
+    bool checkConfig(const std::vector<std::vector<std::string>>& config);
+
+    /**
+     * @brief Deep first search to check if config is a directed acyclic graph
+     * 
+     * @param config 
+     * @param nodeName Nodes to be accessed soon
+     * @param visitedNodes Nodes that have already been visited
+     * @return true 
+     * @return false 
+     */
+    bool visitConfigDFS(const std::vector<std::vector<std::string>>& config,
+        const std::string& nodeName,
+        std::unordered_set<std::string>& visitedNodes);
 
 private:
     std::unordered_map<std::string, std::shared_ptr<Node>> m_nodes;

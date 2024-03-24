@@ -21,6 +21,11 @@ std::shared_ptr<GraphOutputData> Graph::getGraphOutputData() {
 }
 
 bool Graph::buildGraph(std::vector<std::vector<std::string>> config) {
+    if (!checkConfig(config)) {
+        std::cout << "config err" << std::endl;
+        return false;
+    }
+
     // 1. 先构造输入节点； 2. 构造其他节点
     std::promise<std::string> graphInPromise;
     graphInPromise.set_value("graph input");
@@ -135,6 +140,48 @@ void Graph::shuffleConfig(std::vector<std::vector<std::string>>& config) {
         using std::swap;
         swap(first[i], first[D(g, param_t(0, i))]);
     }
+}
+
+bool Graph::checkConfig(const std::vector<std::vector<std::string>>& config) {
+    for (const auto& configDeps : config) {
+        if (configDeps.size() > 1) {
+            std::unordered_set<std::string> visitedNodes;
+            visitedNodes.insert(configDeps[0]);
+            for (size_t i = 1; i < configDeps.size(); ++i) {
+                if (!visitConfigDFS(config, configDeps[i], visitedNodes)) {
+                    return false;
+                }
+                visitedNodes.erase(configDeps[i]);
+            }
+        }
+    }
+
+    return true;
+}
+
+bool Graph::visitConfigDFS(const std::vector<std::vector<std::string>>& config,
+        const std::string& nodeName,
+        std::unordered_set<std::string>& visitedNodes) {
+    for (const auto& configDeps : config) {
+        if (visitedNodes.count(configDeps[0]) == 1) {
+            return false;
+        } else if (configDeps[0] == nodeName) {
+            visitedNodes.insert(configDeps[0]);
+            if (configDeps.size() == 1) {
+                return true;
+            } else {
+                for (int i = 1; i < configDeps.size(); ++i) {
+                    if (!visitConfigDFS(config, configDeps[i], visitedNodes)) {
+                        return false;
+                    }
+                    visitedNodes.erase(configDeps[i]);
+                }
+                return true;
+            }
+        }
+    }
+
+    return true;
 }
 
 } // namespace tng

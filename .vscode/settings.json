@@ -55,7 +55,10 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "execution": "cpp"
+        "execution": "cpp",
+        "unordered_set": "cpp",
+        "__tree": "cpp",
+        "set": "cpp"
     },
     "cmake.configureOnOpen": true
 }
