@@ -9,7 +9,7 @@
 
 #include "node.h"
 
-namespace tng {
+namespace tng_v1 {
 
 struct GraphInputData {
     int gda;
@@ -62,4 +62,4 @@ private:
     std::vector<std::thread> m_thread;
 };
 
-}  // namespace tng
+}  // namespace tng_v1

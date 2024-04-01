@@ -7,7 +7,7 @@
 #include "node_3.h"
 #include "node_4.h"
 
-namespace tng {
+namespace tng_v1 {
 
 Graph::Graph() {
     std::cout << "Graph::Graph ..." << std::endl;
@@ -197,4 +197,4 @@ GraphOutputData Graph::getGraphOutputData() {
     return graphOutputData;
 }
 
-}  // namespace tng
+}  // namespace tng_v1

@@ -4,7 +4,7 @@
 
 #include "node.h"
 
-namespace tng {
+namespace tng_v1 {
 
 class Node1 : public Node {
 public:
@@ -15,4 +15,4 @@ private:
     std::promise<std::shared_ptr<DataCenter>> m_outputDataCenter;
 };
 
-}  // namespace tng
+}  // namespace tng_v1

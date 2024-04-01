@@ -2,7 +2,7 @@
 
 #include <vector>
 
-namespace tng {
+namespace tng_v1 {
 
 struct Node1InputData {
     int a = 0;
@@ -47,4 +47,4 @@ protected:
     std::shared_future<std::shared_ptr<DataCenter>> m_dataCenterOutput;
 };
 
-}  // namespace tng
+}  // namespace tng_v1

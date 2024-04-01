@@ -7,7 +7,7 @@
 
 #include "data_center.h"
 
-namespace tng {
+namespace tng_v2 {
 
 class Node {
 public:
@@ -28,4 +28,4 @@ protected:
     std::shared_future<std::string> m_outputFuture;
 };
 
-}  // namespace tng
+}  // namespace tng_v2

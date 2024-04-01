@@ -12,3 +12,4 @@ endif()
 
 add_subdirectory(graph_v1)
 add_subdirectory(graph_v2)
+add_subdirectory(graph_v3)

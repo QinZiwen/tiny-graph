@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-namespace tng {
+namespace tng_v1 {
 
 Node1::Node1() {
     std::cout << "Node1::Node1 ..." << std::endl;
@@ -35,4 +35,4 @@ void Node1::run() {
     }
 }
 
-}  // namespace tng
+}  // namespace tng_v1

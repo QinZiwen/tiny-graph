@@ -7,7 +7,7 @@
 #include "node4.h"
 #include "node5.h"
 
-namespace tng {
+namespace tng_v2 {
 
 class NodeFactory {
 public:
@@ -28,4 +28,4 @@ public:
     }
 };
 
-}  // namespace tng
+}  // namespace tng_v2

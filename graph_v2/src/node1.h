@@ -2,7 +2,7 @@
 
 #include "node.h"
 
-namespace tng {
+namespace tng_v2 {
 
 class Node1 : public Node {
 public:
@@ -31,4 +31,4 @@ public:
     }
 };
 
-}  // namespace tng
+}  // namespace tng_v2

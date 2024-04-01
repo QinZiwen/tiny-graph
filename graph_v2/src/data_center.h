@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace tng {
+namespace tng_v2 {
 
 struct GraphInputData {
     int gdb;
@@ -53,4 +53,4 @@ private:
     DataCenter() = default;
 };
 
-}  // namespace tng
+}  // namespace tng_v2

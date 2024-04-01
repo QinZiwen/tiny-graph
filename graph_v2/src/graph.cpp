@@ -5,7 +5,7 @@
 
 #include "node_factory.h"
 
-namespace tng {
+namespace tng_v2 {
 
 void Graph::setGraphInputData(std::shared_ptr<GraphInputData> graphInputData) {
     DataCenter::getInstane()->graphInputData = graphInputData;
@@ -184,4 +184,4 @@ bool Graph::visitConfigDFS(const std::vector<std::vector<std::string>>& config,
     return true;
 }
 
-} // namespace tng
+} // namespace tng_v2

@@ -58,7 +58,8 @@
         "execution": "cpp",
         "unordered_set": "cpp",
         "__tree": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "condition_variable": "cpp"
     },
     "cmake.configureOnOpen": true
 }

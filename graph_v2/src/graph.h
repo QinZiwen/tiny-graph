@@ -8,7 +8,7 @@
 #include "data_center.h"
 #include "node.h"
 
-namespace tng {
+namespace tng_v2 {
 
 class Graph {
 public:
@@ -89,4 +89,4 @@ private:
     std::shared_future<std::string> m_graphOutputFuture;
 };
 
-}  // namespace tng
+}  // namespace tng_v2
